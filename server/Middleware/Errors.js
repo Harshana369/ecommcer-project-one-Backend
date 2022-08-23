@@ -9,12 +9,8 @@ const notFound = (req, res, next) => {
 // pass karana url id waradi unahama(500 -> clint api end point eka hariyata dunne na -> 404)
 // ObjectId eka waradiyata dunnahama(200 -> clint send karana id adala deta ekak hoyaganna ba -> 500)
 const errorHandler = (err, req, res, next) => {
-    console.log("open");
 
   const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
-  console.log("start");
-  console.log(res.statusCode === 200);
-  console.log(res.statusCode);
 
   res.status(statusCode);
   res.json({
